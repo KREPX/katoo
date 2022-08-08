@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Aug 08, 2022 at 06:11 PM
+-- Generation Time: Aug 08, 2022 at 11:43 PM
 -- Server version: 5.7.33
 -- PHP Version: 8.1.9
 
@@ -37,6 +37,14 @@ CREATE TABLE `board_main` (
   `bm_date` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Dumping data for table `board_main`
+--
+
+INSERT INTO `board_main` (`bm_id`, `u_id`, `bm_title`, `bm_detail`, `cg_id`, `bm_img`, `bm_date`) VALUES
+(1, 1, 'Test', 'ttttttt', 1, '142596370_109150097834443_12673755584965935_n.jpg', '2022-08-09 05:35:08'),
+(2, 1, 'Test02', 'tttttt', 2, '142596370_109150097834443_12673755584965935_n.jpg', '2022-08-09 06:39:28');
+
 -- --------------------------------------------------------
 
 --
@@ -52,6 +60,16 @@ CREATE TABLE `board_sub` (
   `bs_date` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Dumping data for table `board_sub`
+--
+
+INSERT INTO `board_sub` (`bs_id`, `bm_id`, `u_id`, `bs_detail`, `bs_img`, `bs_date`) VALUES
+(1, 1, 1, '1', '', '2022-08-09 05:35:53'),
+(2, 1, 1, '2', '', '2022-08-09 05:35:55'),
+(3, 1, 1, '3', '', '2022-08-09 05:38:50'),
+(4, 1, 1, '4', 'image_2022-08-09_053943944.png', '2022-08-09 05:39:44');
+
 -- --------------------------------------------------------
 
 --
@@ -62,6 +80,14 @@ CREATE TABLE `category` (
   `cg_id` int(11) NOT NULL,
   `cg_name` varchar(200) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `category`
+--
+
+INSERT INTO `category` (`cg_id`, `cg_name`) VALUES
+(1, 'อนิเมะ'),
+(2, 'หนัง');
 
 -- --------------------------------------------------------
 
@@ -83,7 +109,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`u_id`, `email`, `fullname`, `password`, `img`, `type`) VALUES
-(1, 'user@user.com', 'ผู้ใช้ ฟ้ายิ้ม', '$2y$10$VMIt9vd7Fi02FYBvmwSeqO2Uat.hqtcrD/RpolX3MvHgstjhAx3oS', '142596370_109150097834443_12673755584965935_n.jpg', 0),
+(1, 'user@user.com', 'ผู้ใช้ ฟ้ายิ้ม', '$2y$10$gtB5PbJPksJ/KziT4gxj4O9lj2i9bUuA.fwMQqGxZRmGkuX4s9Y/u', '142596370_109150097834443_12673755584965935_n.jpg', 0),
 (2, 'admin@admin.com', 'ฟ้าใส ยิ้ม', '$2y$10$OAfvzuJPpPu1atTZUxpueOWNRZjzcj3NI8tA//FJKi/XZIPH9M2Bi', '142596370_109150097834443_12673755584965935_n.jpg', 1);
 
 --
@@ -128,13 +154,13 @@ ALTER TABLE `board_main`
 -- AUTO_INCREMENT for table `board_sub`
 --
 ALTER TABLE `board_sub`
-  MODIFY `bs_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `bs_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `category`
 --
 ALTER TABLE `category`
-  MODIFY `cg_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `cg_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `users`

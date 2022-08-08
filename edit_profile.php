@@ -44,10 +44,11 @@ if (isset($_REQUEST['save'])) {
     } else {
         $errorMsg = "อัพเดทข้อมูลไม่สำเร็จ";
     }
+
+
 }
 
 ?>
-
 
 <!doctype html>
 <html lang="en">
@@ -66,7 +67,7 @@ if (isset($_REQUEST['save'])) {
     <div class="edit_profile">
         <div class="edit_profile--container">
             <div class="edit_profile--header">
-                <h1>Edit Profile</h1>
+                <h1>แก้ไขโปรไฟล์</h1>
             </div>
             <div class="edit_profile--body">
                 <div class="edit_profile--content">
@@ -104,6 +105,7 @@ if (isset($_REQUEST['save'])) {
                                 <input type="text" class="form-control" id="fullname" name="fullname" value="<?php echo $result['fullname'] ?>" placeholder="fullname">
                                 <label for="fullname">ชื่อ - นามสกุล</label>
                             </div>
+                            <hr>
 
                             <button type="submit" name="save" value="save" class="btn btn-primary">บันทึก</button>
                             <a href="index.php" class="btn btn-danger">ยกเลิก</a>
