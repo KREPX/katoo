@@ -2,7 +2,7 @@
 session_start();
 require_once '../config/db.php';
 
-if (!isset($_SESSION['u_id'])) {
+if (!isset($_SESSION['u_id']) || $_SESSION['type'] != '1' ) {
   header('location: ../index.php');
 }
 
@@ -15,6 +15,8 @@ $query = $connection->prepare("SELECT * FROM users WHERE u_id=:uid");
 $query->bindParam("uid", $uid, PDO::PARAM_STR);
 $query->execute();
 $result = $query->fetch(PDO::FETCH_ASSOC);
+
+
 
 ?>
 

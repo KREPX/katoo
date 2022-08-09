@@ -19,6 +19,7 @@ if (isset($_POST['login'])) {
     } else {
         if (password_verify($password, $result['password'])) {
             $_SESSION['u_id'] = $result['u_id'];
+            $_SESSION['type'] = $result['type'];
             header("Location: index.php");
         } else {
             echo "<script>alert('เข้าสู่ระบบล้มเหลว');</script>";

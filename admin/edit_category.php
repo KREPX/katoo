@@ -2,7 +2,7 @@
 session_start();
 require_once '../config/db.php';
 
-if (!isset($_SESSION['u_id'])) {
+if (!isset($_SESSION['u_id']) || $_SESSION['type'] != '1') {
     header('location: ../index.php');
 }
 
